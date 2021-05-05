@@ -28,8 +28,8 @@ public class ProdutoVendaDto extends RepresentationModel<ProdutoVendaDto> implem
     @JsonProperty("idVenda")
     private Long idVenda;
 
-    public static ProdutoVendaDto create(ProdutoVenda produtoVenda){
-        return new ModelMapper().map(produtoVenda, ProdutoVendaDto.class);
+    public ProdutoVenda toProdutoVenda(){
+        return new ModelMapper().map(this , ProdutoVenda.class);
     }
 
 }

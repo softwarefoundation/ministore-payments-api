@@ -1,6 +1,9 @@
 package com.softwarefoundation.ministore.payments.entity;
 
+import com.softwarefoundation.ministore.payments.dto.VendaDto;
 import lombok.*;
+import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -21,6 +24,7 @@ public class Venda implements Serializable {
     @Column(name = "ID")
     private Long id;
 
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "DATA_CADASTRO")
     private Date dataCadastro;
 
@@ -29,5 +33,9 @@ public class Venda implements Serializable {
 
     @Column(name = "VALOR_TOTAL")
     private Double valorTotal;
+
+    public VendaDto toVendaDto(){
+        return new ModelMapper().map(this, VendaDto.class);
+    }
 
 }

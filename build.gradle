@@ -29,6 +29,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml'
 	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	runtimeOnly 'com.h2database:h2'
 }
 

@@ -10,7 +10,7 @@ import org.springframework.hateoas.RepresentationModel;
 import java.io.Serializable;
 
 
-@JsonPropertyOrder({"id","estoque"})
+@JsonPropertyOrder({"id", "estoque"})
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,11 +20,13 @@ public class ProdutoDto extends RepresentationModel<ProdutoDto> implements Seria
 
     @JsonProperty("id")
     private Long id;
+    @JsonProperty("nome")
+    private String nome;
     @JsonProperty("estoque")
     private Integer estoque;
 
-    public static ProdutoDto create(Produto produto){
-        return new ModelMapper().map(produto, ProdutoDto.class);
+    public Produto toEntity() {
+        return new ModelMapper().map(this, Produto.class);
     }
 
 }

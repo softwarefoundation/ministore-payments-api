@@ -32,5 +32,10 @@ ministore:
     exchange: ministore.exchange
     queue: ministore.produto.queue
 
+security:
+  jwt:
+    token:
+      secret-key: 3a8382882b7bdf58b7d3abcb3f6aa867
+
 # PATHS
 # http://localhost:8082/ministore-payments-api/h2-console/
